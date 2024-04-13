@@ -1,9 +1,9 @@
-# Vaccine
-
-*SQL Injection*
-
-We all know how important secure programming is. In this case you will try to find filtering errors in the data input. SQL Injection is the injection of SQL commands to alter the behaviour of a program and execute commands on the database.
-In this project you will create a tool that is able to detect SQL injections providing a URL.
+# <p align="center">vaccine</p>
+> *Projet d'introduction à la compréhension d'une faille web très connue, la fameuse injection SQL (SQLi). Vous devrez créer un outil pour automatiser vos actions.*
+>
+> *Nous savons tous combien un développement sécurisé est important. Dans ce contexte, vous essaierez de trouver des erreurs de filtrage dans les entrées de données. L'injection SQL consiste à injecter des commandes SQL pour modifier le comportement d'un programme et exécuter des commandes sur la base de données.*
+>
+> *Dans ce projet, vous allez créer un outil capable de détecter les injections SQL à partir d'une URL.*
 
 ## Checklist
 - MySQL
@@ -12,48 +12,62 @@ In this project you will create a tool that is able to detect SQL injections pro
     * [x] Error-based
     * [x] Blind-based
 - Microsoft SQL Server
+    * [x] ~~Stacked queries~~
     * [x] Union-based
     * [x] Error-based
     * [x] Blind-based
 - PostgreSQL
+    * [x] ~~Stacked queries~~
     * [x] Union-based
     * [x] Error-based
     * [x] Blind-based
 - SQLite
+    * [x] ~~Stacked queries~~
     * [x] Union-based
+    * [x] ~~Error-based~~
     * [x] Blind-based
 
+## Install
+```bash
+sudo apt update -y
+sudo apt install -y make
+sudo apt install -y docker.io
+sudo apt install -y libcurl4-openssl-dev
+sudo apt install -y libjsoncpp-dev
+```
+```bash
+link=Skalyaeve/vaccine
+name=vaccine
+
+git clone https://github.com/$link.git $name
+cd $name && make
+# run les conteneurs test:
+sudo make docker # ça va être plutôt long
+```
+
 ## Usage
-```sh
-sudo apt update
-sudo apt install git make docker.io libcurl4-openssl-dev libjsoncpp-dev
-git clone git@github.com:Skalyaeve/vaccine.git
-cd vaccine
-make
-sudo make docker # this will be very long
-```
-> Open another terminal
-```sh
-./Vaccine -d mysql http://localhost:4242
+```bash
+./Vaccine -t mysql http://localhost:4242
 less archive.json
 ```
-```sh
+```bash
 rm archive.json
-./Vaccine -d postgresql http://localhost:4343
+./Vaccine -t postgresql http://localhost:4343
 less archive.json
 ```
-```sh
+```bash
 rm archive.json
-./Vaccine -d sqlite http://localhost:4444
+./Vaccine -t sqlite http://localhost:4444
 less archive.json
 ```
-```sh
+```bash
 rm archive.json
-./Vaccine -d microsoftsql http://localhost:4545
+./Vaccine -t microsoftsql http://localhost:4545
 less archive.json
 ```
-```sh
+```bash
 sudo make docker-stop
 sudo make docker-fclean
 make fclean
 ```
+
