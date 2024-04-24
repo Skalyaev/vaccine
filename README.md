@@ -36,11 +36,8 @@ sudo apt install -y libcurl4-openssl-dev
 sudo apt install -y libjsoncpp-dev
 ```
 ```bash
-link=Skalyaeve/vaccine
-name=vaccine
-
-git clone https://github.com/$link.git $name
-cd $name && make
+git clone https://github.com/Skalyaeve/vaccine.git
+cd vaccine && make
 # run les conteneurs test:
 sudo make docker # ça va être plutôt long
 ```
