@@ -65,6 +65,5 @@ less archive.json
 ```bash
 sudo make docker-stop
 sudo make docker-fclean
-make fclean
 ```
 
