@@ -7,25 +7,25 @@
 
 ## Checklist
 - MySQL
-    * [x] Stacked queries
-    * [x] Union-based
-    * [x] Error-based
-    * [x] Blind-based
+    * [x] Stacked
+    * [x] Union
+    * [x] Error
+    * [x] Blind
 - Microsoft SQL Server
-    * [x] ~~Stacked queries~~
-    * [x] Union-based
-    * [x] Error-based
-    * [x] Blind-based
+    * [x] ~~Stacked~~
+    * [x] Union
+    * [x] Error
+    * [x] Blind
 - PostgreSQL
-    * [x] ~~Stacked queries~~
-    * [x] Union-based
-    * [x] Error-based
-    * [x] Blind-based
+    * [x] ~~Stacked~~
+    * [x] Union
+    * [x] Error
+    * [x] Blind
 - SQLite
-    * [x] ~~Stacked queries~~
-    * [x] Union-based
-    * [x] ~~Error-based~~
-    * [x] Blind-based
+    * [x] ~~Stacked~~
+    * [x] Union
+    * [x] ~~Error~~
+    * [x] Blind
 
 ## Install
 ```bash
