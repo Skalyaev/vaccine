@@ -43,11 +43,11 @@ fclean: clean
 re: fclean all
 
 docker:
-	docker-compose -f test/docker-compose.yml build
-	docker-compose -f test/docker-compose.yml up
+	docker-compose -f docker-compose.yml build
+	docker-compose -f docker-compose.yml up
 
 docker-stop:
-	docker-compose -f test/docker-compose.yml down
+	docker-compose -f docker-compose.yml down
 
 docker-clean:
 	docker system prune -f
@@ -55,4 +55,4 @@ docker-clean:
 docker-fclean:
 	docker system prune -fa
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re docker docker-stop docker-clean docker-fclean

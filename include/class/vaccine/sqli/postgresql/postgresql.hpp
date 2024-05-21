@@ -1,8 +1,7 @@
 #ifndef SQLI_POSTGRESQL
 #define SQLI_POSTGRESQL
 
-#include "boolean_based.hpp"
-#include "time_based.hpp"
+#include "blind_based.hpp"
 #include "error_based.hpp"
 
 struct sqli_postgresql
@@ -30,10 +29,8 @@ struct sqli_postgresql
                         return mysql_union_based::payload(config, value_type);
                 case ERROR:
                         return postgresql_error_based::payload(config, value_type);
-                case BOOLEAN:
-                        return postgresql_boolean_based::payload(config, value_type);
-                case TIME:
-                        return postgresql_time_based::payload(config, value_type);
+                case BLIND:
+                        return postgresql_blind_based::payload(config, value_type);
                 default:
                         return std::string();
                 }
@@ -44,10 +41,8 @@ struct sqli_postgresql
             sptr_vector& config,
             const uint8& method_type)
         {
-                if (method_type == BOOLEAN)
-                        return mysql_boolean_based::parser(response, config);
-                if (method_type == TIME)
-                        return mysql_time_based::parser(response, config);
+                if (method_type == BLIND)
+                        return mysql_blind_based::parser(response, config);
                 str_vector values;
                 Json::Value entries;
                 std::string errors;

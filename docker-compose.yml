@@ -1,13 +1,21 @@
 services:
 
+  code:
+    image: code
+    container_name: code
+    build: .
+    networks:
+      - vaccine
+    restart: always
+
   nginx:
     image: nginx
     container_name: nginx
-    build: nginx/
+    build: test/nginx/
     networks:
       - vaccine
     ports:
-      - 4242:4242
+      - 4646:4646
       - 4343:4343
       - 4444:4444
       - 4545:4545
@@ -16,7 +24,7 @@ services:
   mysql:
     image: mysql
     container_name: mysql
-    build: mysql/
+    build: test/mysql/
     networks:
       - vaccine
     restart: always
@@ -24,7 +32,7 @@ services:
   postgresql:
     image: postgresql
     container_name: postgresql
-    build: postgresql/
+    build: test/postgresql/
     networks:
       - vaccine
     restart: always
@@ -32,7 +40,7 @@ services:
   sqlite:
     image: sqlite
     container_name: sqlite
-    build: sqlite/
+    build: test/sqlite/
     networks:
       - vaccine
     restart: always
@@ -40,7 +48,7 @@ services:
   microsoftsql:
     image: microsoftsql
     container_name: microsoftsql
-    build: microsoftsql/
+    build: test/microsoftsql/
     networks:
       - vaccine
     restart: always

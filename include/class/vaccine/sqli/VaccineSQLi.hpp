@@ -123,7 +123,7 @@ private:
             const str_vector& parameters,
             CURL** curl) const;
 
-        // ====================s============ MANAGE
+        // ================================ MANAGE
         bool _manage(
             const uint8& value_type,
             const str_vector& response,

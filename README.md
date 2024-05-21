@@ -30,36 +30,36 @@
 ## Install
 ```bash
 sudo apt update -y
-sudo apt install -y make
 sudo apt install -y docker.io
-sudo apt install -y libcurl4-openssl-dev
-sudo apt install -y libjsoncpp-dev
 ```
 ```bash
 git clone https://github.com/Skalyaeve/vaccine.git
-cd vaccine && make
+cd vaccine
 # run les conteneurs test:
 sudo make docker # ça va être plutôt long
 ```
 
 ## Usage
 ```bash
-./Vaccine -t mysql http://localhost:4242
+sudo docker exec -it code bash
+```
+```bash
+./Vaccine -t mysql http://nginx:4646
 less archive.json
 ```
 ```bash
 rm archive.json
-./Vaccine -t postgresql http://localhost:4343
+./Vaccine -t postgresql http://nginx:4343
 less archive.json
 ```
 ```bash
 rm archive.json
-./Vaccine -t sqlite http://localhost:4444
+./Vaccine -t sqlite http://nginx:4444
 less archive.json
 ```
 ```bash
 rm archive.json
-./Vaccine -t microsoftsql http://localhost:4545
+./Vaccine -t microsoftsql http://nginx:4545
 less archive.json
 ```
 ```bash
